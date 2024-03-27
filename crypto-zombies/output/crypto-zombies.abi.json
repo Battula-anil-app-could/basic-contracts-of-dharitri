@@ -1,0 +1,101 @@
+{
+    "buildInfo": {
+        "rustc": {
+            "version": "1.78.0-nightly",
+            "commitHash": "f4b771bf1fb836392e1c510a625cdc81be09c952",
+            "commitDate": "2024-03-14",
+            "channel": "Nightly",
+            "short": "rustc 1.78.0-nightly (f4b771bf1 2024-03-14)"
+        },
+        "contractCrate": {
+            "name": "crypto-zombies",
+            "version": "0.0.0"
+        },
+        "framework": {
+            "name": "dharitri-sc",
+            "version": "0.14.1"
+        }
+    },
+    "name": "CryptoZombies",
+    "constructor": {
+        "inputs": [],
+        "outputs": []
+    },
+    "endpoints": [
+        {
+            "name": "generate_random_dna",
+            "mutability": "readonly",
+            "inputs": [],
+            "outputs": [
+                {
+                    "type": "u64"
+                }
+            ]
+        },
+        {
+            "name": "create_random_zombie",
+            "mutability": "mutable",
+            "inputs": [
+                {
+                    "name": "name",
+                    "type": "bytes"
+                }
+            ],
+            "outputs": []
+        },
+        {
+            "name": "feed_and_multiply",
+            "mutability": "mutable",
+            "inputs": [
+                {
+                    "name": "zombie_id",
+                    "type": "u32"
+                },
+                {
+                    "name": "target_dna",
+                    "type": "u64"
+                }
+            ],
+            "outputs": []
+        },
+        {
+            "name": "feed_on_kitty",
+            "mutability": "mutable",
+            "inputs": [
+                {
+                    "name": "zombie_id",
+                    "type": "u32"
+                },
+                {
+                    "name": "kitty_id",
+                    "type": "u32"
+                }
+            ],
+            "outputs": []
+        }
+    ],
+    "events": [
+        {
+            "identifier": "newZombieEvent",
+            "inputs": [
+                {
+                    "name": "zombie_id",
+                    "type": "u32",
+                    "indexed": true
+                },
+                {
+                    "name": "name",
+                    "type": "bytes"
+                },
+                {
+                    "name": "dna",
+                    "type": "u64",
+                    "indexed": true
+                }
+            ]
+        }
+    ],
+    "dctAttributes": [],
+    "hasCallback": true,
+    "types": {}
+}

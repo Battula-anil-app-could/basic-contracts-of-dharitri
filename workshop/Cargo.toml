@@ -1,0 +1,21 @@
+[package]
+name = "workshop"
+version = "0.0.0"
+authors = ["Andrei Marinica <andrei.marinica@dharitri.com>"]
+edition = "2021"
+publish = false
+
+[lib]
+path = "src/workshop.rs"
+
+[dependencies.dharitri-sc]
+version = "0.14.1"
+
+[dev-dependencies.dharitri-sc-scenario]
+version = "0.14.1"
+
+[workspace]
+members = [
+    ".",
+    "meta",
+]

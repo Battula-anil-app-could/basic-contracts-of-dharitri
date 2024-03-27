@@ -1,0 +1,73 @@
+{
+    "buildInfo": {
+        "rustc": {
+            "version": "1.78.0-nightly",
+            "commitHash": "f4b771bf1fb836392e1c510a625cdc81be09c952",
+            "commitDate": "2024-03-14",
+            "channel": "Nightly",
+            "short": "rustc 1.78.0-nightly (f4b771bf1 2024-03-14)"
+        },
+        "contractCrate": {
+            "name": "workshop",
+            "version": "0.0.0"
+        },
+        "framework": {
+            "name": "dharitri-sc",
+            "version": "0.14.1"
+        }
+    },
+    "docs": [
+        "One of the simplest smart contracts possible,",
+        "it holds a single variable in storage, which anyone can increment."
+    ],
+    "name": "Workshop",
+    "constructor": {
+        "inputs": [
+            {
+                "name": "initial_value",
+                "type": "BigUint"
+            }
+        ],
+        "outputs": []
+    },
+    "endpoints": [
+        {
+            "name": "getSum",
+            "mutability": "readonly",
+            "inputs": [],
+            "outputs": [
+                {
+                    "type": "BigUint"
+                }
+            ]
+        },
+        {
+            "name": "upgrade",
+            "mutability": "mutable",
+            "inputs": [
+                {
+                    "name": "initial_value",
+                    "type": "BigUint"
+                }
+            ],
+            "outputs": []
+        },
+        {
+            "docs": [
+                "Add desired amount to the storage variable."
+            ],
+            "name": "add",
+            "mutability": "mutable",
+            "inputs": [
+                {
+                    "name": "value",
+                    "type": "BigUint"
+                }
+            ],
+            "outputs": []
+        }
+    ],
+    "dctAttributes": [],
+    "hasCallback": false,
+    "types": {}
+}

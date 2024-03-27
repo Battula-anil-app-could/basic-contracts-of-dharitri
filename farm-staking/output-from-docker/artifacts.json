@@ -1,0 +1,28 @@
+{
+    "buildMetadata": {
+        "builderName": "Dharitri-org/sdk-rust-contract-builder:v0.0.1",
+        "versionRust": "nightly-2023-12-11",
+        "versionBinaryen": "version_112",
+        "versionWabt": "1.0.27-1",
+        "versionScTool": "0.12.8",
+        "targetPlatform": "linux/amd64"
+    },
+    "buildOptions": {
+        "packageWholeProjectSrc": true,
+        "specificContract": null,
+        "cargoTargetDir": "/rust/cargo-target-dir",
+        "noWasmOpt": false,
+        "buildRootFolder": "/tmp/project"
+    },
+    "contracts": {
+        "farm-staking": {
+            "version": "0.0.0",
+            "codehash": "f288d34f7e8c90ca6db0ae0fca853e153a4a4541384f4945da1f611d8b252764",
+            "artifacts": {
+                "bytecode": "farm-staking.wasm",
+                "abi": "farm-staking.abi.json",
+                "srcPackage": "farm-staking-0.0.0.source.json"
+            }
+        }
+    }
+}

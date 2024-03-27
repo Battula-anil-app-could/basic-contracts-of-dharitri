@@ -1,0 +1,84 @@
+{
+    "steps": [
+        {
+            "step": "setState",
+            "accounts": {
+                "address:owner": {
+                    "nonce": "1"
+                }
+            },
+            "newAddresses": [
+                {
+                    "creatorAddress": "address:owner",
+                    "creatorNonce": "1",
+                    "newAddress": "sc:adder"
+                }
+            ]
+        },
+        {
+            "step": "scDeploy",
+            "id": "",
+            "tx": {
+                "from": "address:owner",
+                "contractCode": "mxsc:output/workshop.mxsc.json",
+                "arguments": [
+                    "0x05"
+                ],
+                "gasLimit": "5,000,000"
+            },
+            "expect": {
+                "out": [],
+                "status": "0"
+            }
+        },
+        {
+            "step": "scQuery",
+            "id": "",
+            "tx": {
+                "to": "sc:adder",
+                "function": "getSum",
+                "arguments": []
+            },
+            "expect": {
+                "out": [
+                    "0x05"
+                ],
+                "status": "0"
+            }
+        },
+        {
+            "step": "scCall",
+            "id": "",
+            "tx": {
+                "from": "address:owner",
+                "to": "sc:adder",
+                "function": "add",
+                "arguments": [
+                    "0x03"
+                ],
+                "gasLimit": "5,000,000"
+            },
+            "expect": {
+                "out": [],
+                "status": "0"
+            }
+        },
+        {
+            "step": "checkState",
+            "accounts": {
+                "address:owner": {
+                    "storage": "*",
+                    "code": "*",
+                    "owner": "*"
+                },
+                "sc:adder": {
+                    "storage": {
+                        "str:sum": "8"
+                    },
+                    "code": "*",
+                    "owner": "*"
+                }
+            }
+        }
+    ]
+}

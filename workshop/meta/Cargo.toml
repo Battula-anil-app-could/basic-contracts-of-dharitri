@@ -1,0 +1,12 @@
+[package]
+name = "workshop-meta"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[dependencies.workshop]
+path = ".."
+
+[dependencies.dharitri-sc-meta]
+version = "0.14.1"
+default-features = false
